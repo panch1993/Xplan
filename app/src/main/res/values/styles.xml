@@ -1,11 +1,45 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowAnimationStyle">@style/CommonActivityAnimation</item>
     </style>
 
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- CommonActivityAnimation -->
+    <style name="CommonActivityAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/act_slide_in_from_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/act_move_out_to_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/act_move_in_from_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/act_slide_out_from_left</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <!--toolbar 返回按钮颜色-->
+    <style name="toolBarLight" parent="AppTheme">
+        <item name="colorControlNormal">@color/colorTextLight</item>
+    </style>
+
+    <style name="EditTextStyle" parent="AppTheme">
+        <!--android:textColorHint 代表 hint 的颜色
+        colorControlNormal 代表 下划线没有获取焦点的颜色
+        colorControlActivated，colorControlHighlight 代表了获取焦点或者点击的时候 下划线 的颜色-->
+        <!--<item name="android:textColorHint">@color/alpha_white</item>-->
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
 </resources>

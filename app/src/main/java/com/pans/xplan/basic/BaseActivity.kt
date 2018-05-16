@@ -1,7 +1,12 @@
 package com.pans.xplan.basic
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
+import android.widget.TextView
+import com.pans.xplan.R
+import com.pans.xplan.interfaces.GetTitleImpl
 import com.pans.xplan.util.ActManager
 import com.umeng.analytics.MobclickAgent
 
@@ -10,22 +15,25 @@ import com.umeng.analytics.MobclickAgent
  * @date 2018/5/14.
  * @time 上午10:59.
  */
- abstract class BaseActivity : AppCompatActivity() {
+ abstract class BaseActivity : AppCompatActivity(),GetTitleImpl {
 
-    protected var context: BaseActivity? = null
+    protected lateinit var context: BaseActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        context = this
         preSetConentView(savedInstanceState)
         setContentView(getLayoutResId())
-        context = this
         ActManager.get().addActivity(context)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         if (showActionBar()) {
+            val toolbar = findViewById<Toolbar>(R.id.toolbar) ?: throw NullPointerException("can't find toolbar by R.id.toolbar")
+            setSupportActionBar(toolbar)
             if (showBackup()) {
                 supportActionBar?.setDisplayHomeAsUpEnabled(true)
             }
-        } else {
-            supportActionBar?.hide()
+            supportActionBar?.setDisplayShowTitleEnabled(false)
+            findViewById<TextView>(R.id.tv_title).text = getTitleString()
         }
         initData()
         initView()
@@ -56,8 +64,12 @@ import com.umeng.analytics.MobclickAgent
     /**
      * 显示actionbar
      */
-    open fun showActionBar():Boolean = true
+    open fun showActionBar():Boolean = false
 
+    /**
+     * 获取actionbar标题
+     */
+    override fun getTitleString():String = ""
 
     /**
      * 获取layoutResource

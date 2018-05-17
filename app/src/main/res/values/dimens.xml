@@ -2,4 +2,13 @@
     <dimen name="fab_margin">16dp</dimen>
     <integer name="act_anim_time">280</integer>
 
+    <!--actionbar 字号-->
+    <dimen name="text_actionbar">18sp</dimen>
+
+    <!--默认字号-->
+    <dimen name="text_normal">15sp</dimen>
+    <!--副标题字号-->
+    <dimen name="text_second">12sp</dimen>
+    <!--小字号-->
+    <dimen name="text_small">9sp</dimen>
 </resources>

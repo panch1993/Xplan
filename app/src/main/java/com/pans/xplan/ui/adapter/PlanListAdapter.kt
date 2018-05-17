@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.pans.xplan.R
 import com.pans.xplan.data.Const
-import com.pans.xplan.data.realm.entity.PLAN
+import com.pans.xplan.data.realm.entity.PLAN_LIST
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -19,11 +19,11 @@ import java.util.*
  */
 class PlanListAdapter(val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private lateinit var mList: List<PLAN>
+    private lateinit var mList: List<PLAN_LIST>
 
     val format: SimpleDateFormat = SimpleDateFormat(Const.Y_M_D_FORMAT, Locale.getDefault())
 
-    fun setList(list: List<PLAN>) {
+    fun setList(list: List<PLAN_LIST>) {
         mList = list
     }
 

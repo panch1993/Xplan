@@ -6,12 +6,12 @@
     android:viewportHeight="11.02">
 
     <path
-        android:fillColor="@color/colorPrimaryLight"
+        android:fillColor="@color/colorPrimary"
         android:pathData="M5.51,11A5.51,5.51,0,1,1,11,5.51,5.52,5.52,0,0,1,5.51,11Z" />
     <path
-        android:fillColor="@color/colorPrimaryLight"
+        android:fillColor="@color/colorPrimary"
         android:pathData="M24,11a5.51,5.51,0,1,1,5.51-5.51A5.52,5.52,0,0,1,24,11Z" />
     <path
-        android:fillColor="@color/colorPrimaryLight"
+        android:fillColor="@color/colorPrimary"
         android:pathData="M42.49,11A5.51,5.51,0,1,1,48,5.51,5.52,5.52,0,0,1,42.49,11Z" />
 </vector>

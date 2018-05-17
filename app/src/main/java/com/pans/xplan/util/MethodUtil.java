@@ -1,8 +1,9 @@
 package com.pans.xplan.util;
 
 import android.content.Context;
-import android.os.AsyncTask;
+import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 
 import com.pans.xplan.basic.AppContext;
 
@@ -46,11 +47,27 @@ public class MethodUtil {
         return (int) (spValue * fontScale + 0.5f);
     }
 
-    public static void cancelAsyncTask(AsyncTask<?, ?, ?> a) {
-        if (a != null && a.getStatus() == AsyncTask.Status.RUNNING) {
-            a.cancel(true);
-        }
+    /**
+     * 强制隐藏输入法键盘
+     */
+    public static void hideInputMethod(Context context, View view) {
+        InputMethodManager inputMethodManager =
+                (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (inputMethodManager == null) return;
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
+
+
+    /**
+     * 强制隐藏输入法键盘
+     */
+    public static void showInputMethod(Context context, View view) {
+        InputMethodManager inputMethodManager =
+                (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (inputMethodManager == null) return;
+        inputMethodManager.showSoftInput(view,InputMethodManager.SHOW_FORCED);
+    }
+
 
     public static int getWindowWidth(Context activity) {
         WindowManager wm = (WindowManager) activity.getSystemService(Context.WINDOW_SERVICE);

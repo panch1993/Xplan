@@ -23,6 +23,17 @@ public class Const {
     public static final String Y_M_D_H_M_S_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
     /**
+     * Plan type
+     */
+    public static final String TYPE_PLAN_DAY = "plan_day";
+    public static final String TYPE_PLAN_WEEK = "plan_week";
+    public static final String TYPE_PLAN_MONTH = "plan_month";
+    public static final String TYPE_PLAN_YEAR = "plan_year";
+    public static final String TYPE_REPEAT_EACH = "repeat_each";
+    public static final String TYPE_REPEAT_ONCE = "repeat_once";
+    public static final String TYPE_REPEAT_SPECIAL= "repeat_special";
+
+    /**
      * Realm field
      */
     public static final String FIELD_PRIMARY_KEY = "primary_key";
@@ -34,4 +45,10 @@ public class Const {
     public static final String FIELD_EDITABLE = "editable";
     public static final String FIELD_EXPECTED_COMPLETION_NUMBER = "expected_completion_number";
     public static final String FIELD_REPEAT_TYPE = "repeat_type";
+    public static final String FIELD_REPEAT_DAYS = "repeat_days";
+
+    /**
+     * Setting field
+     */
+    public static final String FINGER_ENABLE = "FINGER_ENABLE";
 }

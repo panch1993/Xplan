@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,76 +7,41 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.MainActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <include
+        android:id="@+id/tab_plan"
+        layout="@layout/tab_all_plan"/>
+
+    <include
+        android:id="@+id/tab_setting"
+        layout="@layout/tab_setting"
+        android:visibility="gone"/>
+    <!-- 底部Tab -->
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_gravity="bottom"
+        app:cardElevation="2dp">
 
-        <android.support.design.widget.CollapsingToolbarLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:contentScrim="?attr/colorPrimary"
-            app:expandedTitleMarginEnd="64dp"
-            app:expandedTitleMarginStart="48dp"
-            app:layout_scrollFlags="scroll"
-            app:title=" "
-            app:statusBarScrim="@android:color/transparent">
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                app:cardCornerRadius="6dp"
-                app:layout_collapseMode="pin"
-                app:layout_collapseParallaxMultiplier="0.5"
-                android:layout_margin="10dp"
-                app:cardBackgroundColor="@color/colorPrimaryDark"
-                android:layout_height="250dp">
-                <LinearLayout
-                    android:layout_margin="8dp"
-                    android:layout_width="match_parent"
-                    android:orientation="vertical"
-                    android:layout_height="match_parent">
-                    <TextView
-                        android:layout_marginTop="8dp"
-                        android:textSize="25sp"
-                        android:textColor="@color/white"
-                        android:text="@string/today_plan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                    <android.support.v7.widget.RecyclerView
-                        android:layout_marginTop="10dp"
-                        android:id="@+id/rv_plan"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
+            android:layout_height="50dp"
+            android:gravity="center">
 
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/aiv_plan"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="center"
+                app:srcCompat="@drawable/selector_main_tab1"/>
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                app:title=" "
-                android:layout_height="?android:attr/actionBarSize"
-                app:layout_collapseMode="pin"/>
-
-        </android.support.design.widget.CollapsingToolbarLayout>
-
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tb_main"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </android.support.design.widget.AppBarLayout>
-
-    <com.pans.xplan.widget.NoScrollViewpager
-        android:id="@+id/vp_main"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/ic_plus"/>
-
-</android.support.design.widget.CoordinatorLayout>
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/aiv_setting"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="center"
+                app:srcCompat="@drawable/selector_main_tab2"/>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</FrameLayout>

@@ -1,20 +1,39 @@
 <resources>
+
+    <!--通用-->
     <string name="app_name">XPlan</string>
     <string name="exit_tip">再按一次退出应用</string>
-
     <string name="title">标题</string>
-    <string name="describe">内容</string>
-
     <string name="day">日</string>
     <string name="week">周</string>
     <string name="month">月</string>
     <string name="year">年</string>
+    <string name="empty_data">暂无数据</string>
 
+    <!--指纹-->
+    <string name="tip_input_finger">请输入指纹</string>
+
+    <!--新建计划-->
+    <string name="describe">内容</string>
     <string name="repeat_once">仅一次</string>
     <string name="repeat_each">每%s</string>
+    <string name="repeat_special">自定义</string>
     <string name="complete">完成</string>
-    <string name="create_date">创建日期%s</string>
-    <string name="empty_data">暂无数据</string>
+    <string name="help">帮助</string>
+    <string name="about">关于</string>
+    <string name="create_new_plan">新建计划</string>
+
+    <!--设置-->
+    <string name="setting">设置</string>
+    <string name="fingerprint_unlock">指纹解锁</string>
+    <string name="finger_tip">每次应用启动时,需要验证指纹</string>
+
+
+    <!--计划页-->
     <string name="today_plan">今日计划</string>
+    <string name="week_plan">本周计划</string>
+    <string name="month_plan">本月计划</string>
+    <string name="year_plan">今年计划</string>
+    <string name="create_date">创建日期%s</string>
 
 </resources>

@@ -6,13 +6,18 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowFullscreen">true</item>
+        <item name="colorControlNormal">@color/colorPrimaryText</item>
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
         <item name="android:windowAnimationStyle">@style/CommonActivityAnimation</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="AppTheme.FullScreen">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="AppTheme.Start" parent="AppTheme.FullScreen">
+        <item name="android:windowBackground">@drawable/bg_start_activity</item>
     </style>
 
     <!-- CommonActivityAnimation -->
@@ -37,9 +42,19 @@
         colorControlNormal 代表 下划线没有获取焦点的颜色
         colorControlActivated，colorControlHighlight 代表了获取焦点或者点击的时候 下划线 的颜色-->
         <!--<item name="android:textColorHint">@color/alpha_white</item>-->
-        <item name="colorControlNormal">@color/white</item>
-        <item name="colorControlActivated">@color/colorPrimary</item>
-        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="colorControlNormal">@color/gray_divider</item>
+        <item name="colorControlActivated">@color/gray_divider</item>
+        <item name="colorControlHighlight">@color/gray_divider</item>
         <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="SmallText">
+        <item name="android:textColor">@color/colorSecondText</item>
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
+
+    <style name="SecondText">
+        <item name="android:textColor">@color/colorSecondText</item>
+        <item name="android:textSize">@dimen/text_second</item>
     </style>
 </resources>

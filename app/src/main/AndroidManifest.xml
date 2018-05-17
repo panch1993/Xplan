@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
 
     <application
         android:name=".basic.AppContext"
@@ -18,8 +19,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.activity.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:name=".ui.activity.SplashActivity"
+            android:theme="@style/AppTheme.Start">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -28,6 +29,9 @@
         </activity>
 
         <activity android:name=".ui.activity.CreatePlanActivity"/>
+        <activity android:name=".ui.activity.FingerActivity"
+            android:theme="@style/AppTheme.FullScreen"/>
+        <activity android:name=".ui.activity.MainActivity"/>
 
         <meta-data
             android:name="UMENG_APPKEY"

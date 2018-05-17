@@ -8,6 +8,7 @@
         android:text="@string/empty_data"
         android:drawableTop="@drawable/ic_empty"
         android:textSize="17sp"
+        android:textColor="@color/colorSecondText"
         android:gravity="center"
         android:drawablePadding="10dp"
         android:layout_height="wrap_content"/>

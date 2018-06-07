@@ -1,0 +1,85 @@
+<resources>
+
+    <!--通用-->
+    <string name="app_name">XPlan</string>
+    <string name="exit_tip">Press the return key again to exit the application.</string>
+    <string name="title">Title</string>
+    <string name="day">Day</string>
+    <string name="week">Week</string>
+    <string name="month">Month</string>
+    <string name="year">Year</string>
+    <string name="empty_data">Temporarily no data</string>
+
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+
+    <string name="mon">Mon</string>
+    <string name="tue">Tue</string>
+    <string name="wed">Wed</string>
+    <string name="thur">Thur</string>
+    <string name="fri">Fri</string>
+    <string name="sat">Sat</string>
+    <string name="sun">Sun</string>
+
+    <!--指纹-->
+    <string name="tip_input_finger">Please input fingerprint</string>
+
+    <!--新建计划-->
+    <string name="describe">Describe</string>
+    <string name="repeat_once">Only once</string>
+    <string name="repeat_day">Every day</string>
+    <string name="repeat_week">Every week</string>
+    <string name="repeat_month">Every month</string>
+    <string name="repeat_year">Every year</string>
+    <string name="repeat_special">Custom</string>
+    <string name="complete">Complete</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
+    <string name="create_new_plan">Create Plan</string>
+    <string name="edit_plan">Edit plan</string>
+    <string name="today_plan">Day plan</string>
+    <string name="week_plan">Week plan</string>
+    <string name="month_plan">Month plan</string>
+    <string name="year_plan">Year plan</string>
+
+    <!--设置-->
+    <string name="setting">Settings</string>
+    <string name="fingerprint_unlock">Fingerprint unlock</string>
+    <string name="finger_tip">Each time the application starts, the fingerprint is verified.</string>
+
+
+    <!--计划页-->
+
+    <string name="create_date">create at %s</string>
+    <string name="plan_enable">Plan enable</string>
+    <string name="complete_times">%s/%s</string>
+
+
+    <!--提示-->
+    <string name="tip_create_plan">Click the button to create a new plan.</string>
+    <string name="create_success">Success</string>
+    <string name="edit_success">Modify the success</string>
+    <string name="tip_plan_exist">Please modify the title, or change the plan type.</string>
+    <string name="tip_empty_plan_title">Please enter the plan title.</string>
+    <string name="help_message">Need help or feedback \n please send email to Walkwindc8@foxmail.com (^_^)"</string>
+    <string name="ok">OK</string>
+    <string name="week_startday">First day of week</string>
+    <string name="number_of_plan">Number of plan</string>
+    <string name="repeat_type_of_plan">Repeat type</string>
+    <string name="plan_type">Plan type</string>
+    <string name="tip_delete">After deletion, the history of the program will be cleared.</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="finger_print_success">Fingerprint recognition success</string>
+    <string name="finger_print_fail">Fingerprint identification failure</string>
+    <string name="no_finger_permission">No fingerprint identification rights.</string>
+    <string name="no_finger_model">No fingerprint identification module.</string>
+    <string name="no_lock">Did not unlock the lock password.</string>
+    <string name="no_finger">No fingerprints were recorded.</string>
+
+</resources>

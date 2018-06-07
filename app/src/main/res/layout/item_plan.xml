@@ -1,44 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-                                    android:layout_width="match_parent"
                                     xmlns:app="http://schemas.android.com/apk/res-auto"
                                     xmlns:tools="http://schemas.android.com/tools"
-                                    android:paddingStart="10dp"
-                                    android:paddingEnd="10dp"
-                                    app:cardCornerRadius="4dp"
-                                    android:layout_height="wrap_content">
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:cardCornerRadius="4dp">
 
-    <android.support.constraint.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:paddingTop="7dp"
+        android:layout_height="wrap_content"
         android:paddingBottom="8dp"
-        android:layout_height="wrap_content">
+        android:paddingStart="10dp"
+        android:paddingTop="7dp">
 
         <TextView
             android:id="@+id/tv_title"
-            tools:text="标题"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            tools:text="标题"/>
 
         <TextView
             android:id="@+id/tv_describe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/text_second"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginTop="4dp"
             android:textColor="@color/colorSecondText"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            android:textSize="@dimen/text_second"
             tools:text="内容"/>
+
         <TextView
             android:id="@+id/tv_create_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/text_small"
+            android:layout_alignBottom="@+id/tv_describe"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/create_date"
             android:textColor="@color/colorSecondText"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:text="@string/create_date"/>
-    </android.support.constraint.ConstraintLayout>
+            android:textSize="@dimen/text_small"/>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/aiv_repeat_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            tools:src="@drawable/ic_repeat_each"/>
+    </RelativeLayout>
 </android.support.v7.widget.CardView>

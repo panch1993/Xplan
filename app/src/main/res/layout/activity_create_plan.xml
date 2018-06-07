@@ -1,320 +1,312 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <include layout="@layout/layout_toolbar"/>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="25dp"
-        app:cardCornerRadius="6dp">
+        <include layout="@layout/layout_toolbar"/>
 
-        <LinearLayout
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginBottom="6dp"
-            android:orientation="vertical">
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/til_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:theme="@style/EditTextStyle">
-
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/et_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/title"/>
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:theme="@style/EditTextStyle">
-
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/et_describe"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/describe"/>
-            </android.support.design.widget.TextInputLayout>
-
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="25dp"
-        app:cardCornerRadius="6dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginBottom="6dp"
-            android:animateLayoutChanges="true"
-            android:divider="@drawable/divider_primary_gray"
-            android:orientation="vertical"
-            android:showDividers="middle">
-
-            <RadioGroup
-                android:id="@+id/rg_plan_type"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:text="计划类型"/>
-
-                <RadioButton
-                    android:id="@+id/rb_day"
-                    style="@style/SecondText"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/day"/>
-
-                <RadioButton
-                    android:id="@+id/rb_week"
-                    android:layout_width="0dp"
-                    style="@style/SecondText"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/week"/>
-
-                <RadioButton
-                    android:id="@+id/rb_month"
-                    android:layout_width="0dp"
-                    style="@style/SecondText"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/month"/>
-
-                <RadioButton
-                    android:id="@+id/rb_year"
-                    style="@style/SecondText"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/year"/>
-            </RadioGroup>
-
-
-            <RadioGroup
-                android:id="@+id/rg_repeat_type"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:text="重复周期"/>
-                <RadioButton
-                    android:id="@+id/rb_each"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    style="@style/SecondText"
-                    android:gravity="center"
-                    android:text="@string/repeat_each"/>
-
-                <RadioButton
-                    android:id="@+id/rb_once"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    style="@style/SecondText"
-                    android:text="@string/repeat_once"/>
-
-
-                <RadioButton
-                    android:id="@+id/rb_special"
-                    android:layout_width="0dp"
-                    style="@style/SecondText"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/repeat_special"/>
-            </RadioGroup>
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            app:cardCornerRadius="6dp">
 
             <LinearLayout
-                android:id="@+id/ll_special"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:visibility="gone"
-                tools:visibility="visible">
-
-                <android.support.v7.widget.AppCompatCheckBox
-                    android:id="@+id/cb1"
-                    style="@style/SmallText"
-                    android:layout_width="0dp"
-                    android:checked="true"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="一"/>
-
-                <android.support.v7.widget.AppCompatCheckBox
-                    android:id="@+id/cb2"
-                    style="@style/SmallText"
-                    android:layout_width="0dp"
-                    android:checked="true"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="二"/>
-
-                <android.support.v7.widget.AppCompatCheckBox
-                    android:id="@+id/cb3"
-                    style="@style/SmallText"
-                    android:layout_width="0dp"
-                    android:checked="true"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="三"/>
-
-                <android.support.v7.widget.AppCompatCheckBox
-                    android:id="@+id/cb4"
-                    style="@style/SmallText"
-                    android:layout_width="0dp"
-                    android:checked="true"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="四"/>
-
-                <android.support.v7.widget.AppCompatCheckBox
-                    android:id="@+id/cb5"
-                    style="@style/SmallText"
-                    android:layout_width="0dp"
-                    android:checked="true"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="五"/>
-
-                <android.support.v7.widget.AppCompatCheckBox
-                    android:id="@+id/cb6"
-                    style="@style/SmallText"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="六"/>
-
-                <android.support.v7.widget.AppCompatCheckBox
-                    android:id="@+id/cb7"
-                    style="@style/SmallText"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="日"/>
-            </LinearLayout>
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="25dp"
-        app:cardCornerRadius="6dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_marginBottom="6dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginStart="10dp"
-                android:gravity="center_vertical"
-                android:text="计划次数"/>
+                android:layout_marginTop="6dp"
+                android:orientation="vertical">
 
-            <android.support.v7.widget.AppCompatButton
-                android:id="@+id/bt_subtract"
-                android:layout_width="15dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center_vertical"
-                android:background="@drawable/shape_card_bg_gray_6"
-                android:gravity="center"
-                android:layout_marginEnd="5dp"
-                android:text="-"
-                android:textColor="@color/white"/>
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/til_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:theme="@style/EditTextStyle">
 
-            <TextView
-                android:id="@+id/tv_num"
-                android:layout_width="wrap_content"
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/et_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/title"/>
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:theme="@style/EditTextStyle">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/et_describe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/describe"/>
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            app:cardCornerRadius="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
-                android:text="1"/>
-
-            <android.support.v7.widget.AppCompatButton
-                android:id="@+id/bt_add"
-                android:layout_width="15dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center_vertical"
-                android:background="@drawable/shape_card_bg_gray_6"
-                android:gravity="center"
-                android:text="+"
-                android:textColor="@color/white"/>
-            <Space
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"/>
-            <android.support.v7.widget.SwitchCompat
-                app:switchPadding="10dp"
-                android:checked="true"
-                android:text="立即执行"
-                android:layout_width="wrap_content"
+                android:layout_marginBottom="6dp"
                 android:layout_marginEnd="10dp"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:animateLayoutChanges="true"
+                android:divider="@drawable/divider_primary_gray"
+                android:orientation="vertical"
+                android:showDividers="middle">
 
-        <android.support.v7.widget.AppCompatImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_gravity="end|bottom"
-            app:srcCompat="@drawable/ic_unknown_mark"/>
-    </android.support.v7.widget.CardView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-    <android.support.v7.widget.AppCompatButton
-        android:id="@+id/bt_complete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="25dp"
-        android:background="@color/colorPrimary"
-        android:text="@string/complete"
-        android:textColor="@color/colorTextLight"/>
-</LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:text="@string/plan_type"/>
+
+                        <TextView
+                            android:id="@+id/tv_plan_type"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|end"
+                            android:paddingEnd="5dp"
+                            android:textSize="@dimen/text_second"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@color/gray_divider"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="10dp"
+                            android:text="@string/repeat_type_of_plan"/>
+
+                        <TextView
+                            android:id="@+id/tv_repeat_type"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|end"
+                            android:paddingEnd="5dp"
+                            android:textSize="@dimen/text_second"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_special_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/ic_date"
+                    android:drawableTint="@color/colorPrimary"
+                    android:gravity="center"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:visibility="gone"
+                    tools:text="2018-05-06"
+                    tools:visibility="visible"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_special"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/cb1"
+                        style="@style/SmallText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="@string/mon"/>
+
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/cb2"
+                        style="@style/SmallText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="@string/tue"/>
+
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/cb3"
+                        style="@style/SmallText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="@string/wed"/>
+
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/cb4"
+                        style="@style/SmallText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="@string/thur"/>
+
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/cb5"
+                        style="@style/SmallText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="@string/fri"/>
+
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/cb6"
+                        style="@style/SmallText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/sat"/>
+
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/cb7"
+                        style="@style/SmallText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/sun"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            app:cardCornerRadius="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/number_of_plan"/>
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/bt_subtract"
+                    android:layout_width="15dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/shape_card_bg_gray_6"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:id="@+id/tv_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="1"/>
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/bt_add"
+                    android:layout_width="15dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/shape_card_bg_gray_6"
+                    android:gravity="center"
+                    android:text="+"
+                    android:textColor="@color/white"/>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/sc_plan_enable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:checked="true"
+                    android:text="@string/plan_enable"
+                    app:switchPadding="10dp"/>
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="end|bottom"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_unknown_mark"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/bt_complete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/shape_card_primary_6"
+            android:text="@string/complete"
+            android:textColor="@color/colorTextLight"/>
+    </LinearLayout>
+</ScrollView>

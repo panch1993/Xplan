@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:divider="@drawable/divider_primary_gray"
+    android:orientation="vertical"
+    android:showDividers="middle">
+
+    <TextView
+        android:id="@+id/tv_monday"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:paddingBottom="3dp"
+        android:paddingStart="15dp"
+        android:paddingTop="2dp"
+        android:text="@string/monday"
+        android:textSize="@dimen/text_second"/>
+
+    <TextView
+        android:id="@+id/tv_saturday"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:paddingBottom="3dp"
+        android:paddingStart="15dp"
+        android:paddingTop="2dp"
+        android:text="@string/saturday"
+        android:textSize="@dimen/text_second"/>
+
+    <TextView
+        android:id="@+id/tv_sunday"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:paddingBottom="3dp"
+        android:paddingStart="15dp"
+        android:paddingTop="2dp"
+        android:text="@string/sunday"
+        android:textSize="@dimen/text_second"/>
+</LinearLayout>

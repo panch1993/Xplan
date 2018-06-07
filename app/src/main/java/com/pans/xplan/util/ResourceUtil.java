@@ -1,12 +1,10 @@
 package com.pans.xplan.util;
 
-import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 
 import com.pans.xplan.basic.AppContext;
-import com.pans.xplan.ui.activity.CreatePlanActivity;
 
 /**
  * Created by panchenhuan on 16/12/14..
@@ -34,6 +32,10 @@ public class ResourceUtil {
     //得到文字
     public static String getString(int strId) {
         return getResources().getString(strId);
+    }
+
+    public static String getString(int strId,String... arguments ) {
+        return getResources().getString(strId,arguments);
     }
 
     public static String[] getStringArray(int arrayId) {

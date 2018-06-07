@@ -7,11 +7,7 @@ import android.view.View;
 import com.pans.xplan.util.MethodUtil;
 
 /**
- * 自定义Item间隔（可绘制颜色）
- * <p>
- * Created by ZapFive on 2017/10/9.
- * <p>
- * wuzhuang@mirahome.me
+ * 自定义Item间隔
  */
 public class ItemSpaceDecoration extends RecyclerView.ItemDecoration {
 

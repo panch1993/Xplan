@@ -1,39 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="weekDayArray">
-        <item>日</item>
-        <item>一</item>
-        <item>二</item>
-        <item>三</item>
-        <item>四</item>
-        <item>五</item>
-        <item>六</item>
-    </string-array>
 
-    <string-array name="chinaWeekDayArray">
-        <item>一</item>
-        <item>二</item>
-        <item>三</item>
-        <item>四</item>
-        <item>五</item>
-        <item>六</item>
-        <item>日</item>
-    </string-array>
 
-    <string-array name="completeWeekDay">
-        <item>周一</item>
-        <item>周二</item>
-        <item>周三</item>
-        <item>周四</item>
-        <item>周五</item>
-        <item>周六</item>
-        <item>周日</item>
-    </string-array>
-
-    <string-array name="titleArray">
-        <item>日</item>
-        <item>周</item>
-        <item>月</item>
+    <string-array name="planTypeArray">
+        <item>@string/today_plan</item>
+        <item>@string/week_plan</item>
+        <item>@string/month_plan</item>
+        <item>@string/year_plan</item>
     </string-array>
 
 </resources>

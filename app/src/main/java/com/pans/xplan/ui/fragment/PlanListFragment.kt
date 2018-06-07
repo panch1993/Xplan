@@ -11,6 +11,7 @@ import com.pans.xplan.util.LayoutManagerFactory
 import com.pans.xplan.util.bus.EventMessage
 import com.pans.xplan.util.bus.RxBus
 import com.pans.xplan.widget.ItemSpaceDecoration
+import io.realm.RealmChangeListener
 import io.realm.RealmResults
 
 /**
@@ -20,6 +21,7 @@ import io.realm.RealmResults
  */
 class PlanListFragment : BaseFragment() {
     private lateinit var plans: RealmResults<PLAN_LIST>
+    private lateinit var adapter: PlanListAdapter
 
     override fun getTitleString(): String = arguments!!.getString(Const.FRAGMENT_TITLE)
 
@@ -28,13 +30,16 @@ class PlanListFragment : BaseFragment() {
     override fun getRealmInstance(): Boolean = true
 
     override fun initData() {
-        plans = RealmController().findListByPlanType(realm!!, arguments!!.getString(Const.FIELD_PLAN_TYPE), true)
+        plans = RealmController().findListByPlanType(realm!!, arguments!!.getString(Const.FIELD_PLAN_TYPE),true)
+        plans.addChangeListener(RealmChangeListener {
+            adapter.notifyDataSetChanged()
+        })
     }
 
     override fun initView() {
         val recyclerView = rootView as RecyclerView
         recyclerView.layoutManager = LayoutManagerFactory.createLinearLayoutManager(context, true)
-        val adapter = PlanListAdapter(context)
+        adapter = PlanListAdapter(context,realm!!)
         adapter.setList(plans)
         recyclerView.adapter = adapter
         recyclerView.addItemDecoration(ItemSpaceDecoration(10, 5, 5, 10))

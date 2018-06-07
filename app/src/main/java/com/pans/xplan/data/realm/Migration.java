@@ -1,13 +1,8 @@
 package com.pans.xplan.data.realm;
 
 import android.support.annotation.NonNull;
-import android.text.Editable;
-import android.text.TextWatcher;
-
-import java.util.Date;
 
 import io.realm.DynamicRealm;
-import io.realm.FieldAttribute;
 import io.realm.RealmMigration;
 import io.realm.RealmSchema;
 
@@ -21,24 +16,58 @@ public class Migration implements RealmMigration {
     public void migrate(@NonNull DynamicRealm realm, long oldVersion, long newVersion) {
         RealmSchema schema = realm.getSchema();
 
-        if (oldVersion == 1L) {
-            schema.create("PLAN_LIST")
-                    .addField("primary_key",String.class, FieldAttribute.PRIMARY_KEY)
-                    .addField("plan_type",String.class)
-                    .addField("plan_title",String.class)
-                    .addField("plan_describe",String.class)
-                    .addField("create_date",Date.class)
-                    .addField("editable",boolean.class)
-                    .addField("expected_completion_number",int.class)
-                    .addField("repeat_type",String.class)
-                    .addField("repeat_days",byte[].class);
-
-            schema.get("PLAN")
-                    .removeField("repeat_type");
+        if (oldVersion == 0L) {
+            schema.get("PLAN_LIST")
+                    .addField("target_time", long.class);
 
             oldVersion++;
         }
+/*
+        if (oldVersion == 2) {
+            schema.get("PLAN_LIST")
+                    .addField("plan_enable", boolean.class)
+                    .transform(new RealmObjectSchema.Function() {
+                        @Override
+                        public void apply(DynamicRealmObject obj) {
+                            obj.setBoolean("plan_enable",true);
+                        }
+                    });
+            oldVersion++;
+        }
 
+        if (oldVersion == 3) {
+            schema.get("PLAN_LIST")
+                    .addField("modifier_date",Date.class)
+                    .transform(new RealmObjectSchema.Function() {
+                        @Override
+                        public void apply(DynamicRealmObject obj) {
+                            obj.setDate("modifier_date",obj.getDate("create_date"));
+                        }
+                    });
+            oldVersion++;
+        }
 
+        if (oldVersion == 4) {
+            schema.get("PLAN")
+                    .removeField("complete_date")
+                    .addRealmListField("complete_date", String.class);
+            oldVersion++;
+        }
+
+        if (oldVersion == 5) {
+            schema.get("PLAN")
+                    .removeField("expected_completion_number")
+                    .removeField("editable");
+            oldVersion++;
+        }
+
+        if (oldVersion == 6) {
+            RealmObjectSchema complete_times = schema.create("COMPLETE_TIMES")
+                    .addField("date",int.class)
+                    .addField("complete_times",String.class);
+            schema.get("PLAN")
+                    .removeField("complete_date")
+                    .addRealmObjectField("complete_times", complete_times);
+        }*/
     }
 }

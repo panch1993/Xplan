@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import com.pans.xplan.R
+import com.pans.xplan.data.realm.RealmController
 import com.pans.xplan.interfaces.GetTitleImpl
 import com.pans.xplan.util.ActManager
 import com.umeng.analytics.MobclickAgent
@@ -17,21 +18,28 @@ import kotlinx.android.synthetic.main.layout_toolbar.*
  * @date 2018/5/14.
  * @time 上午10:59.
  */
- abstract class BaseActivity : AppCompatActivity(),GetTitleImpl {
+abstract class BaseActivity : AppCompatActivity(), GetTitleImpl {
 
     protected lateinit var context: BaseActivity
-    var realm: Realm? = null
+    protected var realm: Realm?=null
+    protected var realmController: RealmController?=null
+    private var isInit = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         context = this
-        if (getRealmInstance()) realm = Realm.getDefaultInstance()
+        if (getRealmInstance()) {
+            realm = Realm.getDefaultInstance()
+            realmController = RealmController()
+        }
+
         beforeSetContentView(savedInstanceState)
         setContentView(getLayoutResId())
         ActManager.get().addActivity(context)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         if (showActionBar()) {
-            val toolbar = findViewById<Toolbar>(R.id.toolbar) ?: throw NullPointerException("can't find toolbar by R.id.toolbar")
+            val toolbar = findViewById<Toolbar>(R.id.toolbar)
+                    ?: throw NullPointerException("can't find toolbar by R.id.toolbar")
             setSupportActionBar(toolbar)
             supportActionBar?.setDisplayShowTitleEnabled(false)
             if (showBackup()) supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -44,6 +52,10 @@ import kotlinx.android.synthetic.main.layout_toolbar.*
     override fun onResume() {
         super.onResume()
         MobclickAgent.onResume(this)
+        if (isInit) {
+            isInit = false
+            firstResume()
+        }
     }
 
     override fun onPause() {
@@ -64,24 +76,26 @@ import kotlinx.android.synthetic.main.layout_toolbar.*
         }
         return super.onOptionsItemSelected(item)
     }
-    
+
     open fun beforeSetContentView(savedInstanceState: Bundle?) {}
+
+    open fun firstResume() {}
 
     open fun getRealmInstance(): Boolean = false
     /**
      * 显示返回键
      */
-    open fun showBackup():Boolean = true
+    open fun showBackup(): Boolean = true
 
     /**
      * 显示actionbar
      */
-    open fun showActionBar():Boolean = false
+    open fun showActionBar(): Boolean = false
 
     /**
      * 获取actionbar标题
      */
-    override fun getTitleString():String = ""
+    override fun getTitleString(): String = ""
 
     /**
      * 获取layoutResource

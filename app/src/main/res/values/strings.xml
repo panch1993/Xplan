@@ -10,18 +10,42 @@
     <string name="year">年</string>
     <string name="empty_data">暂无数据</string>
 
+    <string name="monday">星期一</string>
+    <string name="tuesday">星期二</string>
+    <string name="wednesday">星期三</string>
+    <string name="thursday">星期四</string>
+    <string name="friday">星期五</string>
+    <string name="saturday">星期六</string>
+    <string name="sunday">星期日</string>
+
+    <string name="mon">一</string>
+    <string name="tue">二</string>
+    <string name="wed">三</string>
+    <string name="thur">四</string>
+    <string name="fri">五</string>
+    <string name="sat">六</string>
+    <string name="sun">日</string>
+
     <!--指纹-->
     <string name="tip_input_finger">请输入指纹</string>
 
     <!--新建计划-->
     <string name="describe">内容</string>
     <string name="repeat_once">仅一次</string>
-    <string name="repeat_each">每%s</string>
+    <string name="repeat_day">每天</string>
+    <string name="repeat_week">每周</string>
+    <string name="repeat_month">每月</string>
+    <string name="repeat_year">每年</string>
     <string name="repeat_special">自定义</string>
     <string name="complete">完成</string>
     <string name="help">帮助</string>
     <string name="about">关于</string>
     <string name="create_new_plan">新建计划</string>
+    <string name="edit_plan">编辑计划</string>
+    <string name="today_plan">日计划</string>
+    <string name="week_plan">周计划</string>
+    <string name="month_plan">月计划</string>
+    <string name="year_plan">年计划</string>
 
     <!--设置-->
     <string name="setting">设置</string>
@@ -30,10 +54,32 @@
 
 
     <!--计划页-->
-    <string name="today_plan">今日计划</string>
-    <string name="week_plan">本周计划</string>
-    <string name="month_plan">本月计划</string>
-    <string name="year_plan">今年计划</string>
-    <string name="create_date">创建日期%s</string>
+
+    <string name="create_date">创建日期 %s</string>
+    <string name="plan_enable">开启计划</string>
+    <string name="complete_times">%s/%s</string>
+
+
+    <!--提示-->
+    <string name="tip_create_plan">点击按钮新建计划</string>
+    <string name="create_success">创建成功</string>
+    <string name="edit_success">修改成功</string>
+    <string name="tip_plan_exist">请修改标题,或变更计划类型</string>
+    <string name="tip_empty_plan_title">请输入计划标题</string>
+    <string name="help_message">"使用帮助或是意见反馈\n请发送邮件至 Walkwindc8@foxmail.com (^_^)"</string>
+    <string name="ok">OK</string>
+    <string name="week_startday">每周开始日</string>
+    <string name="number_of_plan">计划次数</string>
+    <string name="repeat_type_of_plan">重复周期</string>
+    <string name="plan_type">计划类型</string>
+    <string name="tip_delete">删除后,将清空该计划的历史纪录</string>
+    <string name="delete">删除</string>
+    <string name="cancel">取消</string>
+    <string name="finger_print_success">指纹识别成功</string>
+    <string name="finger_print_fail">指纹识别失败</string>
+    <string name="no_finger_permission">没有指纹识别权限</string>
+    <string name="no_finger_model">没有指纹识别模块</string>
+    <string name="no_lock">没有开启锁屏密码</string>
+    <string name="no_finger">没有录入指纹</string>
 
 </resources>

@@ -31,13 +31,18 @@ public class PLAN_LIST extends RealmObject {
 
     private String repeat_type;
 
-    //{0,1,2,3,4,5,6}
     private byte[] repeat_days;
+
+    private boolean plan_enable;
+
+    private Date modifier_date;
+
+    private long target_time;
 
     public PLAN_LIST() {
     }
 
-    public PLAN_LIST(String plan_type, String plan_title, String plan_describe, Date create_date, boolean editable, int expected_completion_number, String repeat_type,byte[] repeat_days) {
+    public PLAN_LIST(String plan_type, String plan_title, String plan_describe, Date create_date, boolean editable, int expected_completion_number, String repeat_type,byte[] repeat_days,boolean plan_enable,Date modifier_date,long target_time) {
         primary_key = UUID.randomUUID().toString();
         this.plan_type = plan_type;
         this.plan_title = plan_title;
@@ -47,6 +52,33 @@ public class PLAN_LIST extends RealmObject {
         this.expected_completion_number = expected_completion_number;
         this.repeat_type = repeat_type;
         this.repeat_days = repeat_days;
+        this.plan_enable = plan_enable;
+        this.modifier_date = modifier_date;
+        this.target_time = target_time;
+    }
+
+    public long getTarget_time() {
+        return target_time;
+    }
+
+    public void setTarget_time(long target_time) {
+        this.target_time = target_time;
+    }
+
+    public Date getModifier_date() {
+        return modifier_date;
+    }
+
+    public void setModifier_date(Date modifier_date) {
+        this.modifier_date = modifier_date;
+    }
+
+    public boolean isPlan_enable() {
+        return plan_enable;
+    }
+
+    public void setPlan_enable(boolean plan_enable) {
+        this.plan_enable = plan_enable;
     }
 
     public String getPrimary_key() {
@@ -133,6 +165,9 @@ public class PLAN_LIST extends RealmObject {
                 ", expected_completion_number=" + expected_completion_number +
                 ", repeat_type='" + repeat_type + '\'' +
                 ", repeat_days=" + Arrays.toString(repeat_days) +
+                ", plan_enable=" + plan_enable +
+                ", modifier_date=" + modifier_date +
+                ", target_time=" + target_time +
                 '}';
     }
 }

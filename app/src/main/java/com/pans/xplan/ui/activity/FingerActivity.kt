@@ -32,7 +32,7 @@ class FingerActivity:BaseActivity() {
         }
 
         override fun onAuthenticationSucceeded(result: FingerprintManagerCompat.AuthenticationResult?) {
-            tv_state.text = "指纹识别成功"
+            tv_state.text = getString(R.string.finger_print_success)
             startActivity(Intent(context,MainActivity::class.java))
             context.finish()
         }
@@ -43,7 +43,7 @@ class FingerActivity:BaseActivity() {
         }
 
         override fun onAuthenticationFailed() {
-            tv_state.text = "指纹识别失败"
+            tv_state.text = getString(R.string.finger_print_fail)
         }
     }
     override fun getLayoutResId(): Int = R.layout.activity_finger
@@ -58,34 +58,37 @@ class FingerActivity:BaseActivity() {
     }
     override fun initData() {
 
+        keyguardManager = getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
+        fingerprintManagerCompat = FingerprintManagerCompat.from(this)
     }
 
     override fun initView() {
         iv_close.setOnClickListener { context.finish() }
-        keyguardManager = getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
-        fingerprintManagerCompat = FingerprintManagerCompat.from(this)
+    }
+
+    override fun onResume() {
+        super.onResume()
 
         if (isFinger()) {
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.USE_FINGERPRINT) != PackageManager.PERMISSION_GRANTED) {
-                ToastUtil.showToast("没有指纹识别权限")
+                ToastUtil.showToast(getString(R.string.no_finger_permission))
                 return
             }
             fingerprintManagerCompat.authenticate(null,0,null,callBack,null)
         }
     }
 
-
-    fun isFinger(): Boolean {
+    private fun isFinger(): Boolean {
         if (!fingerprintManagerCompat.isHardwareDetected) {
-            ToastUtil.showToast("没有指纹识别模块")
+            ToastUtil.showToast(getString(R.string.no_finger_model))
             return false
         }
         if (!keyguardManager.isKeyguardSecure) {
-            ToastUtil.showToast("没有开启锁屏密码")
+            ToastUtil.showToast(getString(R.string.no_lock))
             return false
         }
         if (!fingerprintManagerCompat.hasEnrolledFingerprints()) {
-            ToastUtil.showToast("没有录入指纹")
+            ToastUtil.showToast(getString(R.string.no_finger))
             return false
         }
         return true

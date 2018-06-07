@@ -10,6 +10,15 @@ public class Const {
     public static final String SP_NAME = "x_plan_sp";
 
     public static final String FRAGMENT_TITLE = "fragment_title";
+
+    /**
+     * Intent field
+     */
+    public static final String TAB_INDEX = "TAB_INDEX";
+    public static final String TAB_TITLE = "TAB_TITLE";
+    public static final String IS_EDIT = "IS_EDIT";
+    public static final String PLAN_KEY = "PLAN_KEY";
+
     /**
      * Date common
      */
@@ -20,6 +29,7 @@ public class Const {
     public static final String H_M_C = "%02d:%02d";//时分冒号格式
     public static final String P_H_M_C = "%02d:%02d - %02d:%02d";//时间段 时分冒号格式
     public static final String Y_M_D_FORMAT = "yyyy-MM-dd";
+    public static final String Y_M_D_POINT_FORMAT = "yyyy.MM.dd";
     public static final String Y_M_D_H_M_S_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
     /**
@@ -38,17 +48,13 @@ public class Const {
      */
     public static final String FIELD_PRIMARY_KEY = "primary_key";
     public static final String FIELD_PLAN_TYPE = "plan_type";
+    public static final String FIELD_PLAN_ENABLE = "plan_enable";
     public static final String FIELD_PLAN_TITLE = "plan_title";
-    public static final String FIELD_PLAN_DESCRIBE = "plan_describe";
-    public static final String FIELD_COMPLETE_DATE = "complete_date";
-    public static final String FIELD_CREATE_DATE = "create_date";
-    public static final String FIELD_EDITABLE = "editable";
-    public static final String FIELD_EXPECTED_COMPLETION_NUMBER = "expected_completion_number";
-    public static final String FIELD_REPEAT_TYPE = "repeat_type";
-    public static final String FIELD_REPEAT_DAYS = "repeat_days";
+    public static final String FIELD_MODIFIER_DATE = "modifier_date";
 
     /**
      * Setting field
      */
     public static final String FINGER_ENABLE = "FINGER_ENABLE";
+    public static final String WEEK_START = "WEEK_START";
 }

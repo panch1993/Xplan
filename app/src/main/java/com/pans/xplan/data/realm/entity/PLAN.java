@@ -1,11 +1,6 @@
 package com.pans.xplan.data.realm.entity;
 
-import java.util.Date;
-import java.util.UUID;
-
-import io.realm.RealmList;
 import io.realm.RealmObject;
-import io.realm.annotations.PrimaryKey;
 
 /**
  * @author android01
@@ -13,44 +8,63 @@ import io.realm.annotations.PrimaryKey;
  * @time 上午10:48.
  */
 public class PLAN extends RealmObject {
-    @PrimaryKey
-    private String primary_key;
 
+    private String primary_key;
     private String plan_type;
+
+    private int complete_times;
+
+    private long create_time;
 
     private String plan_title;
 
     private String plan_describe;
 
-    private RealmList<Date> complete_date;
-
-    private Date create_date;
-
-    private boolean editable;
-
     private int expected_completion_number;
 
     public PLAN() {
-
     }
 
-    public PLAN(String plan_type, String plan_title, String plan_describe, RealmList<Date> complete_date, Date create_date, boolean editable, int expected_completion_number) {
-        primary_key = UUID.randomUUID().toString();
+    public PLAN(String plan_type,String primary_key, int complete_times, long create_time, String plan_title, String plan_describe, int expected_completion_number) {
         this.plan_type = plan_type;
+        this.primary_key = primary_key;
+        this.complete_times = complete_times;
+        this.create_time = create_time;
         this.plan_title = plan_title;
         this.plan_describe = plan_describe;
-        this.complete_date = complete_date;
-        this.create_date = create_date;
-        this.editable = editable;
         this.expected_completion_number = expected_completion_number;
+    }
+
+    public String getPlan_type() {
+        return plan_type;
+    }
+
+    public void setPlan_type(String plan_type) {
+        this.plan_type = plan_type;
     }
 
     public String getPrimary_key() {
         return primary_key;
     }
 
-    public String getPlan_type() {
-        return plan_type;
+    public void setPrimary_key(String primary_key) {
+        this.primary_key = primary_key;
+    }
+
+    public int getComplete_times() {
+        return complete_times;
+    }
+
+    public void setComplete_times(int complete_times) {
+        this.complete_times = complete_times;
+    }
+
+    public long getCreate_time() {
+        return create_time;
+    }
+
+    public void setCreate_time(long create_time) {
+        this.create_time = create_time;
     }
 
     public String getPlan_title() {
@@ -67,34 +81,6 @@ public class PLAN extends RealmObject {
 
     public void setPlan_describe(String plan_describe) {
         this.plan_describe = plan_describe;
-    }
-
-    public void setPlan_type(String plan_type) {
-        this.plan_type = plan_type;
-    }
-
-    public RealmList<Date> getComplete_date() {
-        return complete_date;
-    }
-
-    public void setComplete_date(RealmList<Date> complete_date) {
-        this.complete_date = complete_date;
-    }
-
-    public Date getCreate_date() {
-        return create_date;
-    }
-
-    public void setCreate_date(Date create_date) {
-        this.create_date = create_date;
-    }
-
-    public boolean isEditable() {
-        return editable;
-    }
-
-    public void setEditable(boolean editable) {
-        this.editable = editable;
     }
 
     public int getExpected_completion_number() {
